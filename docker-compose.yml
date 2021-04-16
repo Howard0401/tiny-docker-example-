@@ -1,6 +1,6 @@
 version: "3.5"
 services:
-  r2entrance:
+  tiny_test_log:
     image: tiny_test_log
     container_name: tiny_test_log
     build:
