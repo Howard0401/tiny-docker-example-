@@ -21,6 +21,7 @@ docker-compose down
 # fi
 
 docker-compose up -d 
+docker-compose logs -f -t 
 
 
 
