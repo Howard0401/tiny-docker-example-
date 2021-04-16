@@ -5,7 +5,7 @@ export REMOVE_IMAGE=$(docker images -q $IMG_NAME)
 # RMI for remove active container, image
 RMI() {
     if [ "$1" != "" ]; then
-        docker rmi -f $1
+        docker rm -f $1
     fi
     if [ "$2" != "" ]; then
         docker rmi -f $2
@@ -13,7 +13,9 @@ RMI() {
 }
 
 if [ "$IMG_NAME" != "" ]; then 
-    RMI($ACTIVE_IMAGE_ID, $REMOVE_IMAGE)
+    echo "ACTIVE_IMAGE_ID=$ACTIVE_IMAGE_ID"
+    echo "REMOVE_IMAGE=$REMOVE_IMAGE"
+    RMI "$ACTIVE_IMAGE_ID" "$REMOVE_IMAGE"
 fi
 
 docker-compose up -d 
@@ -21,7 +23,7 @@ docker-compose up -d
 
 
     # if [ "$ACTIVE_IMAGE_ID" != ""]; then
-    #     docker rmi -f $ACTIVE_IMAGE_ID
+    #     docker rm -f $ACTIVE_IMAGE_ID
     # fi
     # if [ "$REMOVE_IMAGE" != "" ]; then
     # docker rmi -f $REMOVE_IMAGE

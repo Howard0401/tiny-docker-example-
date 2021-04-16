@@ -1,5 +1,5 @@
 FROM golang:1.15-alpine AS build-env
-RUN apk add --no-cache git gcc libc-dev
+# RUN apk add --no-cache git gcc libc-dev
 WORKDIR /src
 ADD . /src
 RUN go build -o tiny-server .
