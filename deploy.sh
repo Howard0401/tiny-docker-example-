@@ -2,6 +2,8 @@ export IMG_NAME=tiny_test_log
 export ACTIVE_IMAGE_ID=$(docker inspect --format="{{.Id}}" $IMG_NAME)
 export REMOVE_IMAGE=$(docker images -q $IMG_NAME)
 
+docker-compose down
+
 # RMI for remove active container, image
 RMI() {
     if [ "$1" != "" ]; then
