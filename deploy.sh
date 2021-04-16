@@ -3,7 +3,7 @@ export ACTIVE_IMAGE_ID=$(docker inspect --format="{{.Id}}" $IMG_NAME)
 export REMOVE_IMAGE=$(docker images -q $IMG_NAME)
 
 # RMI for remove active container, image
-function RMI() {
+RMI() {
     if [ "$1" != "" ]; then
         docker rmi -f $1
     fi
