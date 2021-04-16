@@ -4,7 +4,7 @@ export REMOVE_IMAGE=$(docker images -q $IMG_NAME)
 
 # RMI for remove active container, image
 function RMI() {
-    if [ "$1" != ""]; then
+    if [ "$1" != "" ]; then
         docker rmi -f $1
     fi
     if [ "$2" != "" ]; then
@@ -12,7 +12,7 @@ function RMI() {
     fi
 }
 
-if [ "$IMG_NAME" != ""]; then 
+if [ "$IMG_NAME" != "" ]; then 
     RMI($ACTIVE_IMAGE_ID, $REMOVE_IMAGE)
 fi
 
