@@ -12,7 +12,11 @@ function RMI() {
     fi
 }
 
-RMI($ACTIVE_IMAGE_ID, $REMOVE_IMAGE)
+if [ "$IMG_NAME" != ""]; then 
+    RMI($ACTIVE_IMAGE_ID, $REMOVE_IMAGE)
+fi
+
+docker-compose up -d 
 
 
 
