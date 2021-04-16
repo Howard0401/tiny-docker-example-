@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  r2entrance:
+    image: tiny_test_log
+    container_name: tiny_test_log
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    working_dir: /app
+    entrypoint: ./tiny-server
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1M"
+        max-file: "10"
